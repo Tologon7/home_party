@@ -1,0 +1,102 @@
+:root {
+  --gold: #c9a24d;
+  --blue: #2f4f8f;
+  --bg: #f9f5f0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  background: var(--bg);
+  color: #333;
+  text-align: center;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 20px;
+  background: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),
+    url('../images/couple.jpg') center/cover no-repeat;
+  color: #fff;
+}
+
+.ornament-layer {
+  position: absolute;
+  inset: 0;
+  background: url('../images/ornaments.png') center/contain repeat;
+  opacity: .15;
+  animation: float 20s linear infinite;
+}
+
+@keyframes float {
+  from { background-position: 0 0; }
+  to { background-position: 300px 300px; }
+}
+
+.hero h1 {
+  font-family: 'Marck Script', cursive;
+  font-size: 3.5rem;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  color: var(--gold);
+}
+
+.section {
+  padding: 80px 20px;
+}
+
+.invite-text {
+  font-size: 1.3rem;
+  color: var(--blue);
+}
+
+.image-section img {
+  width: 90%;
+  max-width: 420px;
+  border-radius: 50%;
+  border: 6px solid var(--gold);
+}
+
+h3 {
+  font-family: 'Marck Script';
+  font-size: 2.2rem;
+  color: var(--blue);
+}
+
+.map-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 36px;
+  background: #2b7cff;
+  color: #fff;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+form {
+  max-width: 420px;
+  margin: auto;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  margin-top: 10px;
+  padding: 14px;
+  width: 100%;
+  background: var(--gold);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+}

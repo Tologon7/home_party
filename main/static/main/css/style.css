@@ -1,0 +1,125 @@
+:root {
+  --bg: #f8f5f0;
+  --text: #1f2a44;
+  --gold: #c7a14a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Spectral', serif;
+  background: var(--bg);
+  color: var(--text);
+  text-align: center;
+}
+
+/* ORNAMENT */
+.bg-ornament {
+  position: fixed;
+  inset: 0;
+  background: url('../images/ornament.svg') center/1200px repeat;
+  opacity: .06;
+  animation: drift 60s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes drift {
+  from { background-position: 0 0; }
+  to { background-position: 2000px 1200px; }
+}
+
+/* HERO */
+.hero {
+  padding: 140px 20px 100px;
+}
+
+.eyebrow {
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Infant', serif;
+  font-size: 4rem;
+  margin: 20px 0;
+}
+
+.divider {
+  width: 80px;
+  height: 2px;
+  background: var(--gold);
+  margin: 40px auto 0;
+}
+
+/* SECTIONS */
+.section {
+  padding: 80px 20px;
+  max-width: 760px;
+  margin: auto;
+}
+
+.section.accent {
+  background: rgba(199,161,74,0.06);
+}
+
+.poetry {
+  font-size: 1.3rem;
+  line-height: 1.9;
+}
+
+/* HEADINGS */
+h2 {
+  font-family: 'Cormorant Infant';
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+}
+
+/* MAP */
+.map-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 36px;
+  border: 1px solid var(--gold);
+  border-radius: 40px;
+  color: var(--text);
+  text-decoration: none;
+  transition: .3s;
+}
+
+.map-link:hover {
+  background: var(--gold);
+  color: white;
+}
+
+/* FORM */
+form {
+  max-width: 360px;
+  margin: auto;
+}
+
+input, select {
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  margin-top: 20px;
+  padding: 14px;
+  width: 100%;
+  background: var(--gold);
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  color: white;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.8rem; }
+  .poetry { font-size: 1.1rem; }
+}

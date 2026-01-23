@@ -1,228 +1,88 @@
 {% load static %}
-
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ky">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Приглашение на [Событие]</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <title>Yй тойуна чакыруу</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;600&family=Spectral:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style>
-:root {
-  --gold: #c9a24d;
-  --dark: #2b2b2b;
-  --bg: #f9f5f0;
-}
 
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background: var(--bg);
-  color: var(--dark);
-  line-height: 1.7;
-}
-
-/* HERO */
-header {
-  min-height: 100vh;
-  padding: 140px 20px 100px;
-  text-align: center;
-  background:
-    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
-    url('{% static "couple.jpg" %}') center/cover no-repeat;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 4.2rem;
-  margin-bottom: 20px;
-}
-
-header p {
-  font-size: 1.5rem;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-/* CONTAINER */
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 60px 20px;
-}
-
-.section {
-  margin: 120px 0;
-  text-align: center;
-}
-
-.section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.6rem;
-  margin-bottom: 20px;
-}
-
-.section p {
-  font-size: 1.15rem;
-}
-
-/* IMAGE */
-.section img {
-  width: 100%;
-  border-radius: 18px;
-  box-shadow: 0 20px 40px rgba(0,0,0,.18);
-}
-
-/* MAP */
-.map {
-  height: 380px;
-  margin-top: 30px;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,.15);
-}
-
-/* FORM */
-form {
-  max-width: 520px;
-  margin: 40px auto 0;
-  background: #fff;
-  padding: 30px;
-  border-radius: 18px;
-  box-shadow: 0 20px 40px rgba(0,0,0,.1);
-}
-
-input, select, textarea {
-  width: 100%;
-  padding: 14px;
-  margin-top: 12px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  font-size: 1rem;
-}
-
-button {
-  margin-top: 20px;
-  width: 100%;
-  padding: 16px;
-  background: var(--gold);
-  border: none;
-  border-radius: 40px;
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: .3s;
-}
-
-button:hover {
-  background: #b08c3c;
-}
-
-/* MESSAGES */
-.messages {
-  max-width: 520px;
-  margin: 0 auto 40px;
-}
-.success {
-  background: #d4edda;
-  color: #155724;
-  padding: 12px;
-  border-radius: 8px;
-}
-.error {
-  background: #f8d7da;
-  color: #721c24;
-  padding: 12px;
-  border-radius: 8px;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  header h1 { font-size: 2.8rem; }
-  header p { font-size: 1.2rem; }
-  .section { margin: 80px 0; }
-  .section h2 { font-size: 2rem; }
-}
-</style>
-
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
 </head>
 <body>
 
-  <header data-aos="fade-down">
-    <h1>[Имя и Имя]</h1>
-    <p style="font-size:1.6rem; margin:20px 0;">Приглашают Вас на [тои / юбилей / etc.]</p>
-  </header>
+<div class="bg-ornament"></div>
 
-  <div class="container">
-    {% if messages %}
-      <div class="messages">
-        {% for message in messages %}
-          <div class="{% if message.tags == 'success' %}success{% else %}error{% endif %}">{{ message }}</div>
-        {% endfor %}
-      </div>
-    {% endif %}
+<header class="hero">
+  <span class="eyebrow" data-aos="fade-down">Yй тойуна</span>
+  <h1 data-aos="fade-up">Чакыруу</h1>
+  <div class="divider"></div>
+</header>
 
-    <div class="section" data-aos="fade-up">
-      <h2>Дорогие коллеги и друзья!</h2>
-      <p>Мы рады пригласить Вас... (вставь текст)</p>
-    </div>
+<section class="section" data-aos="fade-up">
+  <p class="poetry">
+    Урматтуу сыйлуу конокторубуз,<br>
+    Ак тилек, ак батаңыздарды<br>
+    жүрөгүбүз менен күтөбүз.<br><br>
 
-    <div class="section" data-aos="fade-up" data-aos-delay="100">
-      <img src="{% static 'photo1.jpg' %}" alt="Фото">
-    </div>
+    Чын ниеттен даам сызылып,<br>
+    берекелүү дасторкондо<br>
+    жолугушабыз деген ишенимдебиз.
+  </p>
+</section>
 
-    <<div class="section" data-aos="fade-up" data-aos-delay="200">
-  <h2>Когда и где</h2>
+<section class="section accent" data-aos="fade-up">
+  <h2>Той салтанаты</h2>
   <p>
-    Дата: 15 мая 2026<br>
-    Время: 15:00<br>
-    Место: Ресторан «Ала-Тоо», г. Бишкек
+    2026-жылдын 15-февралы<br>
+    Саат 16:00
+  </p>
+</section>
+
+<section class="section" data-aos="fade-up">
+  <h2>Дареги</h2>
+  <p>
+    Бишкек шаары<br>
+    Uluu Too-Zeta, рестораны<br>
+    Баба-Ата көчөсү, 109/а
   </p>
 
   <a
-    href="https://2gis.kg/bishkek/search/Ресторан%20Ала-Тоо"
+    href="https://2gis.kg/bishkek/firm/70000001092670342?m=74.56386%2C42.826861%2F16"
     target="_blank"
-    style="
-      display:inline-block;
-      margin-top:30px;
-      padding:16px 40px;
-      border-radius:40px;
-      background:#2b7cff;
-      color:white;
-      font-weight:600;
-      text-decoration:none;
-    "
-  >
-    📍 Открыть в 2ГИС
+    class="map-link">
+    Даректи 2ГИСтен ачуу
   </a>
-</div>
+</section>
 
+<section class="section accent" data-aos="fade-up">
+  <h2>Той ээлери</h2>
+  <p class="owners">
+    Асель Николаевна • Өмурбек • Айдын<br>
+  </p>
+</section>
 
-    <div class="section" data-aos="fade-up" data-aos-delay="300">
-      <h2>Подтвердите участие</h2>
-      <form method="post">
-        {% csrf_token %}
-        <input type="text" name="name" placeholder="Ваше имя" required>
-        <select name="status" required>
-          <option value="">Я...</option>
-          <option value="Буду">Буду</option>
-          <option value="Не буду">Не смогу присутствовать</option>
-        </select>
-        <textarea name="message" rows="4" placeholder="Комментарий / пожелания (не обязательно)"></textarea>
-        <button type="submit">Отправить</button>
-      </form>
-    </div>
-  </div>
+<section class="section" data-aos="fade-up">
+  <h2>Катышууну ырастаңыз</h2>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ duration: 1200, once: true });</script>
+  <form method="post">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Атыңыз" required>
+    <select name="status" required>
+      <option value="">Мен...</option>
+      <option value="Келем">Келем</option>
+      <option value="Келе албайм">Келе албайм</option>
+    </select>
+    <button type="submit">Жооп жөнөтүү</button>
+  </form>
+</section>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="{% static 'main/js/animations.js' %}"></script>
 </body>
 </html>
