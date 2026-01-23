@@ -19,7 +19,7 @@
 <div class="bg-ornament"></div>
 
 <header class="hero">
-  <span class="eyebrow" data-aos="fade-down">Yй тойуна</span>
+  <span class="eyebrow" data-aos="fade-down">Ак-өрго тойуна</span>
   <h1 data-aos="fade-up">Чакыруу</h1>
   <div class="divider"></div>
 </header>
@@ -39,7 +39,7 @@
 <section class="section accent" data-aos="fade-up">
   <h2>Той салтанаты</h2>
   <p>
-    2026-жылдын 15-февралы<br>
+    2026-жылдын 7-февралы<br>
     Саат 16:00
   </p>
 </section>
@@ -49,7 +49,7 @@
   <p>
     Бишкек шаары<br>
     Uluu Too-Zeta, рестораны<br>
-    Баба-Ата көчөсү, 109/а
+    Баба-Ата көчөсү, 87
   </p>
 
   <a
@@ -71,18 +71,39 @@
   <h2>Катышууну ырастаңыз</h2>
 
   <form method="post">
-    {% csrf_token %}
-    <input type="text" name="name" placeholder="Атыңыз" required>
-    <select name="status" required>
-      <option value="">Мен...</option>
-      <option value="Келем">Келем</option>
-      <option value="Келе албайм">Келе албайм</option>
-    </select>
-    <button type="submit">Жооп жөнөтүү</button>
-  </form>
+  {% csrf_token %}
+
+  <input
+    type="text"
+    name="name"
+    placeholder="Атыңыз"
+    required
+  >
+
+  <select name="status" required>
+    <option value="">Мен...</option>
+    <option value="Келем">Келем</option>
+    <option value="Келе албайм">Келе албайм</option>
+  </select>
+
+  <!-- 🔥 ВАЖНО: name="message" -->
+  <textarea
+    name="message"
+    placeholder="Каалоо же кошумча маалымат (милдеттүү эмес)"
+    rows="4"
+  ></textarea>
+
+  <button type="submit">Жооп жөнөтүү</button>
+</form>
+
 </section>
+
+<audio id="bg-music" preload="auto" loop>
+  <source src="{% static 'main/audio/toy.mp3' %}" type="audio/mpeg">
+</audio>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="{% static 'main/js/animations.js' %}"></script>
+
 </body>
 </html>

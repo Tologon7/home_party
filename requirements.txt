@@ -3,3 +3,4 @@ packaging==26.0
 django      ==       5.2.4
 pillow   ==          11.3.0
 whitenoise == 6.11.0
+certifi   == 2026.1.4

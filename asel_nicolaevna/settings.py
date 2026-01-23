@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 
+import os
+import certifi
+
+os.environ["SSL_CERT_FILE"] = certifi.where()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -134,13 +139,13 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Email settings (для теста используй console, потом смени на реальный SMTP)
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # сначала печатает в терминал
-# Для реальной отправки (Gmail пример):
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = 'твоя@gmail.com'
-# EMAIL_HOST_PASSWORD = 'app_password_от_google'  # не обычный пароль!
-# DEFAULT_FROM_EMAIL = 'твоя@gmail.com'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = 'tologonkubandykov@gmail.com'
+EMAIL_HOST_PASSWORD = 'vciebockweessizi'
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
