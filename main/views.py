@@ -50,7 +50,10 @@ def home(request):
                     ['asel2006.82@mail.ru'],
                 )
                 email.attach_alternative(html_content, "text/html")
-                email.send()
+                try:
+                    email.send()
+                except Exception as e:
+                    print('EMAIL ERROR:', e)
 
                 messages.success(request, 'Сообщение отправлено ✔️')
             except Exception as e:

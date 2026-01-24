@@ -15,6 +15,10 @@ from pathlib import Path
 import os
 import certifi
 
+from dotenv import load_dotenv
+load_dotenv()
+
+
 os.environ["SSL_CERT_FILE"] = certifi.where()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,10 +29,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%9qifo@tyj+ab9fao2tf^^2p9#uf%44+=&+-tvt2a=2k$_&0&0'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG')
 
 ALLOWED_HOSTS = ['*']
 
@@ -137,15 +141,17 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = os.environ.get('DEFAULT_AUTO_FIELD')
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND')
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_PORT = os.environ.get('EMAIL_PORT')
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
 
-EMAIL_HOST_USER = 'tologonkubandykov@gmail.com'
-EMAIL_HOST_PASSWORD = 'vciebockweessizi'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+EMAIL_TIMEOUT = os.environ.get('EMAIL_TIMEOUT')

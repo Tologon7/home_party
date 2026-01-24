@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yй тойуна чакыруу</title>
+  <title>Ак-өргө тойуна чакыруу</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;600&family=Spectral:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;500;600;700&family=Spectral:wght@300;400;500&display=swap" rel="stylesheet">
 
   <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -18,92 +18,294 @@
 
 <div class="bg-ornament"></div>
 
-<header class="hero">
-  <span class="eyebrow" data-aos="fade-down">Ак-өрго тойуна</span>
-  <h1 data-aos="fade-up">Чакыруу</h1>
-  <div class="divider"></div>
-</header>
+<!-- Кыргызский орнамент в углах -->
+<div class="corner-ornament top-left"></div>
+<div class="corner-ornament top-right"></div>
+<div class="corner-ornament bottom-left"></div>
+<div class="corner-ornament bottom-right"></div>
 
-<section class="section" data-aos="fade-up">
-  <p class="poetry">
-    Урматтуу сыйлуу конокторубуз,<br>
-    Ак тилек, ак батаңыздарды<br>
-    жүрөгүбүз менен күтөбүз.<br><br>
+<!-- Пригласительная карточка в центре -->
+<div class="invitation-hero">
+  <div class="invitation-card" data-aos="zoom-in" data-aos-duration="1000">
+    <!-- Фон с домами (основной видимый слой) -->
+    <div class="houses-background"></div>
 
-    Чын ниеттен даам сызылып,<br>
-    берекелүү дасторкондо<br>
-    жолугушабыз деген ишенимдебиз.
-  </p>
-</section>
+    <div class="card-border">
+      <div class="card-gold-line"></div>
 
-<section class="section accent" data-aos="fade-up">
-  <h2>Той салтанаты</h2>
-  <p>
-    2026-жылдын 7-февралы<br>
-    Саат 16:00
-  </p>
-</section>
+      <div class="invitation-content">
+        <!-- Верхний орнамент -->
+        <div class="ornament-top">
+          <svg width="120" height="20" viewBox="0 0 120 20">
+            <path d="M10,10 Q20,0 30,10 T50,10 T70,10 T90,10 T110,10" fill="none" stroke="#d4a74a" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
 
-<section class="section" data-aos="fade-up">
-  <h2>Дареги</h2>
-  <p>
-    Бишкек шаары<br>
-    Uluu Too-Zeta, рестораны<br>
-    Баба-Ата көчөсү, 87
-  </p>
+        <span class="eyebrow" data-aos="fade-down" data-aos-delay="300">Ак-өргө тойуна</span>
+        <h1 data-aos="fade-up" data-aos-delay="400">Чакыруу</h1>
 
-  <a
-    href="https://2gis.kg/bishkek/firm/70000001092670342?m=74.56386%2C42.826861%2F16"
-    target="_blank"
-    class="map-link">
-    Даректи 2ГИСтен ачуу
-  </a>
-</section>
+        <!-- Кыргызский узор -->
+        <div class="kyrgyz-pattern" data-aos="zoom-in" data-aos-delay="500">
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <path d="M40,10 Q60,10 60,30 T60,50 T40,70 T20,50 T20,30 T40,10" fill="none" stroke="#d4a74a" stroke-width="1.2" opacity="0.6"/>
+          </svg>
+        </div>
 
-<section class="section accent" data-aos="fade-up">
-  <h2>Той ээлери</h2>
-  <p class="owners">
-    Асель • Өмурбек • Айдын<br>
-  </p>
-</section>
+        <div class="divider" data-aos="width-animation" data-aos-delay="600"></div>
 
-<section class="section" data-aos="fade-up">
-  <h2>Катышууну ырастаңыз</h2>
+        <!-- Текст внутри карточки -->
+        <p class="invitation-text" data-aos="fade-up" data-aos-delay="700">
+          <span class="highlight">Урматтуу сыйлуу конокторум!</span><br>
+          Сиздерди «Ак өргө» тойго арналган салтанаттуу кечеге чакырабыз.
+        </p>
 
-  <form method="post">
-  {% csrf_token %}
+        <!-- Нижний орнамент -->
+        <div class="ornament-bottom">
+          <svg width="100" height="15" viewBox="0 0 100 15">
+            <path d="M5,10 Q15,5 25,10 T45,10 T65,10 T85,10 T95,5" fill="none" stroke="#d4a74a" stroke-width="1" opacity="0.5"/>
+          </svg>
+        </div>
+      </div>
 
-  <input
-    type="text"
-    name="name"
-    placeholder="Атыңыз"
-    required
-  >
+      <div class="card-gold-line bottom"></div>
+    </div>
 
-  <select name="status" required>
-    <option value="">Мен...</option>
-    <option value="Келем">Келем</option>
-    <option value="Келе албайм">Келе албайм</option>
-  </select>
+    <!-- Украшение уголков -->
+    <div class="corner-decoration tl"></div>
+    <div class="corner-decoration tr"></div>
+    <div class="corner-decoration bl"></div>
+    <div class="corner-decoration br"></div>
+  </div>
 
-  <!-- 🔥 ВАЖНО: name="message" -->
-  <textarea
-    name="message"
-    placeholder="Каалоо же кошумча маалымат (милдеттүү эмес)"
-    rows="4"
-  ></textarea>
+  <!-- Анимация падающих листьев/орнаментов -->
+  <div class="floating-ornaments">
+    <div class="ornament o1"></div>
+    <div class="ornament o2"></div>
+    <div class="ornament o3"></div>
+    <div class="ornament o4"></div>
+  </div>
+</div>
 
-  <button type="submit">Жооп жөнөтүү</button>
-</form>
+<!-- Стрелка для скролла -->
+<div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1000">
+  <span>Толук маалымат</span>
+  <svg width="24" height="24" viewBox="0 0 24 24">
+    <path d="M12 17.414L3.293 8.707 4.707 7.293 12 14.586 19.293 7.293 20.707 8.707 12 17.414z" fill="#d4a74a"/>
+  </svg>
+</div>
 
-</section>
+<!-- Основной контент -->
+<main class="main-content">
+  <section class="section poetry-section" data-aos="fade-up">
+    <div class="section-container">
+      <div class="poetry-wrapper">
+        <div class="quote-icon left">❝</div>
+        <p class="poetry">
+          Жакшылык менен сыйлашып,<br>
+          Ак дасторкон үстүндө бата берип,<br>
+          Кадырлуу коноктор болуп,<br>
+          Берекелүү тойго кошулуңуз!
+        </p>
+        <div class="quote-icon right">❞</div>
+      </div>
+      <div class="poetry-ornament">
+        <svg width="60" height="60">
+          <circle cx="30" cy="30" r="25" fill="none" stroke="#d4a74a" stroke-width="0.8" opacity="0.3"/>
+        </svg>
+      </div>
+    </div>
+  </section>
 
+  <section class="section accent event-section" data-aos="fade-up">
+    <div class="section-icon">
+      <svg width="50" height="50">
+        <path d="M25,10 L40,25 L25,40 L10,25 Z" fill="none" stroke="#d4a74a" stroke-width="2"/>
+      </svg>
+    </div>
+    <h2>Той салтанаты</h2>
+    <div class="event-details">
+      <div class="date-card">
+        <div class="date-number">07</div>
+        <div class="date-month">Февраль</div>
+        <div class="date-year">2026</div>
+      </div>
+      <div class="time-info">
+        <svg width="24" height="24">
+          <circle cx="12" cy="12" r="10" fill="none" stroke="#d4a74a" stroke-width="1.5"/>
+          <path d="M12 7 L12 12 L16 14" stroke="#d4a74a" stroke-width="1.5" fill="none"/>
+        </svg>
+        <span>Саат 16:00</span>
+      </div>
+    </div>
+    <p class="event-note">Той салтанаты кадырлуу конокторду күтөт</p>
+  </section>
+
+  <section class="section location-section" data-aos="fade-up">
+    <div class="section-icon">
+      <svg width="50" height="50">
+        <path d="M25,10 C15,10 10,20 10,25 C10,35 25,45 25,45 C25,45 40,35 40,25 C40,20 35,10 25,10 Z" fill="none" stroke="#d4a74a" stroke-width="2"/>
+        <circle cx="25" cy="25" r="5" fill="#d4a74a" opacity="0.5"/>
+      </svg>
+    </div>
+    <h2>Дареги</h2>
+    <div class="location-card">
+      <div class="location-icon">
+        <svg width="30" height="30">
+          <path d="M15,5 L25,10 L25,25 L15,30 L5,25 L5,10 Z" fill="#d4a74a" opacity="0.2"/>
+        </svg>
+      </div>
+      <div class="location-details">
+        <h3>Uluu Too-Zeta Рестораны</h3>
+        <p>Бишкек шаары<br>Баба-Ата көчөсү, 87</p>
+      </div>
+    </div>
+
+    <a href="https://2gis.kg/bishkek/firm/70000001092670342"
+       target="_blank"
+       class="map-link"
+       data-aos="zoom-in">
+      <svg width="20" height="20" style="margin-right: 10px;">
+        <path d="M10,2 C6.1,2 3,5.1 3,9 C3,14.2 10,18 10,18 C10,18 17,14.2 17,9 C17,5.1 13.9,2 10,2 Z M10,12 C8.3,12 7,10.7 7,9 C7,7.3 8.3,6 10,6 C11.7,6 13,7.3 13,9 C13,10.7 11.7,12 10,12 Z" fill="white"/>
+      </svg>
+      Даректи 2ГИСтен ачуу
+    </a>
+  </section>
+
+  <!-- ИЗМЕНЕНО: Оставили только Асель -->
+  <section class="section accent owners-section" data-aos="fade-up">
+    <div class="section-icon">
+      <svg width="50" height="50">
+        <path d="M25,10 C30,10 35,15 35,20 C35,25 30,30 25,30 C20,30 15,25 15,20 C15,15 20,10 25,10 Z M10,35 L40,35 L40,40 C40,45 35,50 25,50 C15,50 10,45 10,40 Z" fill="none" stroke="#d4a74a" stroke-width="2"/>
+      </svg>
+    </div>
+    <h2>Той ээси</h2>
+    <div class="owners-gallery">
+      <div class="owner-card" data-aos="flip-left">
+        <div class="owner-initial">А</div>
+        <h3>Асель</h3>
+        <p>Тойдун ээси</p>
+      </div>
+    </div>
+    <p class="owners-message">Сиздерди кадырлуу коноктор катары күтөм!</p>
+  </section>
+
+  <section class="section form-section" data-aos="fade-up">
+    <div class="section-icon">
+      <svg width="50" height="50">
+        <path d="M15,15 L35,15 L35,35 L15,35 Z M20,20 L30,20 L30,30 L20,30 Z" fill="none" stroke="#d4a74a" stroke-width="2"/>
+        <path d="M25,40 L25,45" stroke="#d4a74a" stroke-width="2"/>
+      </svg>
+    </div>
+    <h2>Катышууну ырастаңыз</h2>
+    <p class="form-subtitle">Сураныч, жообуңузду 4-февралга чейин калтырыңыз</p>
+
+    <form method="post" class="invitation-form" id="invitationForm">
+      {% csrf_token %}
+
+      <div class="form-group" data-aos="fade-right">
+        <label for="name">
+          <svg width="20" height="20">
+            <path d="M10,10 C12.8,10 15,7.8 15,5 C15,2.2 12.8,0 10,0 C7.2,0 5,2.2 5,5 C5,7.8 7.2,10 10,10 Z M10,12 C5,12 0,14 0,18 L0,20 L20,20 L20,18 C20,14 15,12 10,12 Z" fill="#d4a74a" opacity="0.7"/>
+          </svg>
+          Атыңыз
+        </label>
+        <input type="text" id="name" name="name" placeholder="Толук аты-жөнүңүз" required>
+      </div>
+
+      <div class="form-group" data-aos="fade-left">
+        <label for="status">
+          <svg width="20" height="20">
+            <path d="M10,0 L20,5 L20,15 L10,20 L0,15 L0,5 Z" fill="#d4a74a" opacity="0.7"/>
+          </svg>
+          Катышуу статусу
+        </label>
+        <select id="status" name="status" required>
+          <option value="">Танданыз...</option>
+          <option value="Келем">Келем</option>
+          <option value="Келе албайм">Келе албайм</option>
+        </select>
+      </div>
+
+      <div class="form-group" data-aos="fade-up">
+        <label for="message">
+          <svg width="20" height="20">
+            <path d="M2,2 L18,2 L18,14 L2,14 Z M2,2 L10,8 L18,2" fill="none" stroke="#d4a74a" stroke-width="1.5"/>
+          </svg>
+          Каалоо же кошумча маалымат
+        </label>
+        <textarea id="message" name="message" placeholder="Сиздин каалооңуз же эскертүүңүз..." rows="4"></textarea>
+        <span class="helper-text">(милдеттүү эмес)</span>
+      </div>
+
+      <button type="submit" class="submit-btn" data-aos="zoom-in">
+        <span>Жооп жөнөтүү</span>
+        <svg width="20" height="20">
+          <path d="M5,10 L15,10 M15,10 L12,7 M15,10 L12,13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </form>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer" data-aos="fade-up">
+  <div class="footer-content">
+    <div class="footer-ornament">
+      <svg width="100" height="20">
+        <path d="M10,10 Q30,2 50,10 T90,10" fill="none" stroke="#d4a74a" stroke-width="1" opacity="0.3"/>
+      </svg>
+    </div>
+    <p class="footer-text">
+      <span class="gold-text">Ак тилек, ак батаңыздарды күтөбүз!</span><br>
+      Биздин үй-бүлө сиздерди кадырлуу коноктор катары күтөт
+    </p>
+    <div class="footer-contacts">
+      <p>Суроолор үчүн: +996 505 770 771</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Фоновая музыка -->
 <audio id="bg-music" preload="auto" loop>
-  <source src="{% static 'main/audio/toy.mp3' %}" type="audio/mpeg">
+  <source src="{% static 'main/audio/ff.mp3' %}" type="audio/mpeg">
 </audio>
+
+<!-- Музыкальный контрол -->
+<div class="music-control" onclick="toggleMusic()">
+  <svg width="24" height="24" id="music-icon">
+    <path d="M12 3v12m0-12L6 9m6-6l6 9m-6-9v12m0 0l-6-3m6 3l6-3" stroke="#d4a74a" stroke-width="2" fill="none"/>
+  </svg>
+</div>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="{% static 'main/js/animations.js' %}"></script>
+<script>
+  // Инициализация AOS
+  AOS.init({
+    duration: 800,
+    offset: 100,
+    once: true
+  });
 
+  // Фоновая музыка
+  const audio = document.getElementById('bg-music');
+  const musicIcon = document.getElementById('music-icon');
+
+  function toggleMusic() {
+    if (audio.paused) {
+      audio.play();
+      musicIcon.style.opacity = '1';
+    } else {
+      audio.pause();
+      musicIcon.style.opacity = '0.5';
+    }
+  }
+
+  // Автовоспроизведение с задержкой
+  setTimeout(() => {
+    audio.volume = 0.3;
+    audio.play().catch(e => console.log('Автовоспроизведение заблокировано'));
+  }, 1000);
+</script>
 </body>
 </html>
