@@ -130,8 +130,6 @@ body {
 .houses-background {
   position: absolute;
   inset: 0;
-  background:
-    url('../images/houses-bg.png') center/cover no-repeat;
   filter: brightness(1.05) contrast(1.1);
   z-index: 1;
 }
@@ -260,7 +258,7 @@ body {
 .invitation-text {
   font-size: 1.2rem;
   color: var(--text-soft);
-  margin-top: 20px;
+  margin-top: -55px;
   line-height: 1.7;
   position: relative;
   z-index: 5;
@@ -730,6 +728,7 @@ body {
   color: var(--text-soft);
   opacity: 0.8;
   font-size: 0.95rem;
+  margin-top: -120px; /* подними вверх */
 }
 
 /* Контрол музыки */
