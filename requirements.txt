@@ -9,7 +9,7 @@ pip          == 25.3
 python-dotenv== 1.2.1
 sqlparse     == 0.5.5
 whitenoise   == 6.11.0
-dj-database-url==2.2.1
+dj-database-url==3.1.0
 django-cleanup==8.0.2
 
 
