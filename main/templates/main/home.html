@@ -1,9 +1,16 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="ky">
+<html lang="ky" translate="no">
 <head>
+
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="google" content="notranslate">
+  <meta name="googlebot" content="notranslate">
+
+  <meta http-equiv="Content-Language" content="ky">
   <title>Ак-өргө тойуна чакыруу</title>
 
   <!-- Fonts -->
@@ -54,13 +61,7 @@
         <div class="divider" data-aos="width-animation" data-aos-delay="600"></div>
 
         <div class="section-overlay"></div>
-        <!-- Текст внутри карточки -->
-        <p class="invitation-text" data-aos="fade-up" data-aos-delay="700">
-          <span class="highlight">Урматтуу сыйлуу конокторум!</span><br>
-          Сиздерди «Ак өргө» тойго арналган салтанаттуу кечеге келип,
-          жакшылыгымды тең бөлүшүп, ак дасторкон үстүндө бата берип,
-          кадырлуу коногум болуп кетүүгө чакырам!
-        </p>
+
 
         <!-- Нижний орнамент -->
         <div class="ornament-bottom">
@@ -140,7 +141,6 @@
         <span>Саат 16:00</span>
       </div>
     </div>
-    <p class="event-note">Той салтанаты кадырлуу конокторду күтөт</p>
   </section>
 
   <section class="section location-section" data-aos="fade-up">
@@ -305,6 +305,59 @@
     audio.volume = 0.3;
     audio.play().catch(e => console.log('Автовоспроизведение заблокировано'));
   }, 1000);
+</script>
+<script>
+// БЛОКИРОВКА АВТО-ПЕРЕВОДА
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Удаляем классы перевода Google
+    document.documentElement.classList.remove('translated-ltr', 'translated-rtl');
+    document.body.classList.remove('translated-ltr', 'translated-rtl');
+
+    // 2. Блокируем Google Translate
+    window.googleTranslateElementInit = function() {
+        console.log('Google Translate заблокирован');
+        return false;
+    };
+
+    // 3. Удаляем iframe переводчика
+    setInterval(function() {
+        // Удаляем iframe Google Translate
+        var frames = document.querySelectorAll('iframe[src*="translate"]');
+        frames.forEach(function(frame) {
+            frame.remove();
+        });
+
+        // Удаляем скрипты переводчика
+        var scripts = document.querySelectorAll('script[src*="translate.google"]');
+        scripts.forEach(function(script) {
+            script.remove();
+        });
+
+        // Удаляем кнопку перевода
+        var translateBtn = document.querySelector('.goog-te-menu-frame, .goog-te-banner-frame');
+        if (translateBtn) translateBtn.remove();
+    }, 1000);
+
+    // 4. Блокируем горячие клавиши перевода
+    document.addEventListener('keydown', function(e) {
+        // Ctrl+Shift+L - перевод в Chrome
+        if (e.ctrlKey && e.shiftKey && e.key === 'L') {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }
+    });
+});
+
+// 5. Переопределяем объект Google Translate
+if (typeof google !== 'undefined' && google.translate) {
+    google.translate.TranslateElement = function() {
+        this.publicMethod = function() {
+            console.log('Перевод заблокирован');
+            return false;
+        };
+    };
+}
 </script>
 </body>
 </html>

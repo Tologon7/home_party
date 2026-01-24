@@ -64,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'main.middleware.NoTranslateMiddleware',
 ]
 
 # Оптимизация статики
@@ -144,17 +145,16 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = os.environ.get('LANGUAGE_CODE', 'ky')
 TIME_ZONE = os.environ.get('TIME_ZONE', 'Asia/Bishkek')
-USE_I18N = True
+USE_I18N = False
 USE_TZ = True
-USE_L10N = True
+USE_L10N = False
+LANGUAGE_CODE = 'ky'
+
 
 # Поддержка кыргызского языка
 LANGUAGES = [
-    ('ky', 'Кыргызча'),
-    ('ru', 'Русский'),
-    ('en', 'English'),
+    ('ky', 'Кыргызча')
 ]
 
 LOCALE_PATHS = [
